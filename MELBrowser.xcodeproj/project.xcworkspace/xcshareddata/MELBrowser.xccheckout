@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>722F66FB-66C1-492F-B99F-5755220A4903</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MELBrowser</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FB4A14DFBB3C2E8C76EA7DBB7D0D6A8A763CDF00</key>
+		<string>https://github.com/Leveton/MELBrowser.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MELBrowser.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FB4A14DFBB3C2E8C76EA7DBB7D0D6A8A763CDF00</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Leveton/MELBrowser.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FB4A14DFBB3C2E8C76EA7DBB7D0D6A8A763CDF00</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FB4A14DFBB3C2E8C76EA7DBB7D0D6A8A763CDF00</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MELBrowser</string>
+		</dict>
+	</array>
+</dict>
+</plist>
