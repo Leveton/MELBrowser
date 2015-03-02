@@ -1,2 +1,2 @@
 # MELBrowser
-Objective-C translation of this WKWebView tutorial
+Objective-C translation for part 1 of AppCoda's WKWebView tutorial

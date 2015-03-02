@@ -29,6 +29,9 @@
     
     [self.barView setFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
     
+    self.backButton.enabled = NO;
+    self.forwardButton.enabled = NO;
+    
     self.webView = [[WKWebView alloc]initWithFrame:CGRectZero];
     self.webView.navigationDelegate = self;
     [self.progressView.layer setZPosition:2];
@@ -43,6 +46,10 @@
     
     [self.view addConstraint:height];
     [self.view addConstraint:width];
+
+    
+    [self.webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
+    [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     
     NSURL *url = [NSURL URLWithString:@"http://www.appcoda.com"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -57,6 +64,34 @@
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
    [self.barView setFrame:CGRectMake(0, 0, size.width, 30)];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"loading"]) {
+        self.backButton.enabled = self.webView.canGoBack;
+        self.forwardButton.enabled = self.webView.canGoForward;
+    }
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        self.progressView.hidden = self.webView.estimatedProgress == 1;
+        [self.progressView setProgress:self.webView.estimatedProgress animated:YES];
+    }
+}
+
+- (IBAction)back:(UIBarButtonItem *)sender
+{
+    [self.webView goBack];
+}
+
+- (IBAction)forward:(UIBarButtonItem *)sender
+{
+    [self.webView goForward];
+}
+
+- (IBAction)reload:(UIBarButtonItem *)sender
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.webView.URL];
+    [self.webView loadRequest:request];
 }
 
 #pragma mark - WKNavigationDelegate
